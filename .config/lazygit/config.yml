@@ -1,0 +1,21 @@
+git:
+  log:
+    order: 'date-order'
+  branchLogCmd: 'git log --graph --date-order --color=always --abbrev-commit --decorate --date=relative --pretty=medium {{branchName}} --'
+
+# customCommands:
+#   - key: b
+#     command: tig blame -- {{.SelectedFile.Name}}
+#     context: files
+#     description: blame file at tree
+#     subprocess: yes
+#   - key: h
+#     command: tig -- {{.SelectedFile.Name}}
+#     context: files
+#     description: tig file (history of commits affecting file)
+#     subprocess: yes
+#   - key: f
+#     command: tig show {{.SelectedSubCommit.Sha}}
+#     context: subCommits
+#     description: tig commit (`t` again to browse files at revision)
+#     subprocess: yes

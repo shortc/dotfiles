@@ -1,0 +1,43 @@
+theme = "catppuccin_macchiato_latest"
+
+[editor]
+line-number = "relative"
+cursorline = true
+color-modes = true
+auto-save = true
+bufferline = "multiple"
+undercurl = true
+idle-timeout = 0
+scrolloff = 8
+popup-border = "all"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.statusline]
+left = ["mode", "spinner", "version-control", "file-name", "read-only-indicator", "file-modification-indicator"]
+center = ["read-only-indicator"]
+right = ["file-type", "file-line-ending", "diagnostics", "selections", "register", "position-percentage", "position", "file-encoding"]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.indent-guides]
+render = true
+
+[editor.soft-wrap]
+enable = true
+max-wrap = 25
+
+[editor.lsp]
+display-signature-help-docs = true
+display-inlay-hints = true
+display-messages = true
+
+[editor.whitespace]
+render = "all"
+
+[editor.file-picker]
+hidden = false

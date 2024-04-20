@@ -1,0 +1,17 @@
+layout {
+    pane size=1 borderless=true {
+        plugin location="zellij:compact-bar"
+    }
+    pane {
+        command "git co dev && git pull"
+        cwd "/Users/cshort/Code/UDig/cwa/hasura-proxy"
+    }
+    pane {
+        command "git co dev && git pull"
+        cwd "/Users/cshort/Code/UDig/cwa/web"
+    }
+    pane {
+        command "git co dev && git pull"
+        cwd "/Users/cshort/Code/UDig/cwa/hasura-development"
+    }
+}

@@ -1,0 +1,17 @@
+[[conn]]
+type = "postgres"
+user = "postgres"
+host = "cwa-cms-stack-db.c2bdujgbmyqc.us-east-1.rds.amazonaws.com"
+password = "Bzy3atn42"
+port = 5432
+database = "cms"
+name = "CWA DB"
+
+[[conn]]
+type = "postgres"
+user = "apollo"
+host = "localhost"
+password = "visicarer0ck5"
+port = 5432
+database = "apollo_test"
+name = "HealthBridge"

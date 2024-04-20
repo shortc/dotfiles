@@ -1,0 +1,97 @@
+[language-server.omnisharp]
+command = "dotnet"
+args = [ "/Users/cshort/.omnisharp/osx-arm64-net6.0/OmniSharp.dll", "--languageserver" ]
+
+[[language]]
+name = "c-sharp"
+scope = "source.csharp"
+injection-regex = "c-?sharp"
+file-types = ["cs", "csx", "cake", "cshtml"]
+roots = ["sln", "csproj"]
+comment-token = "//"
+indent = { tab-width = 4, unit = "    " }
+language-servers = [ "omnisharp" ]
+
+# Ruby stuffs
+[language-server.solargraph]
+config.diagnostics=true
+config.formatting=false
+
+[[language]]
+name = "ruby"
+formatter = { command = "rubocop", args = ["--stdin", "foo.rb", "-a", "--stderr", "--fail-level", "fatal", "--server"] }
+auto-format = true
+language-servers=[{name="solargraph"}]
+
+# JS\TS Stuffs
+[language-server.eslint]
+command = "vscode-eslint-language-server"
+args = ["--stdio"] # should come by def with helix
+
+[language-server.eslint.config]
+format = true
+nodePath = ""
+onIgnoredFiles = "off"
+packageManager = "yarn"
+quiet = false
+rulesCustomizations = []
+run = "onType"
+useESLintClass = true
+validate = "on"
+codeAction = { disableRuleComment = { enable = true, location = "separateLine" }, showDocumentation = { enable = true } }
+codeActionOnSave = { mode = "all" }
+experimental = { }
+problems = { shortenToSingleLine = false }
+workingDirectory = { mode = "auto" }
+
+[language-server.typescript-language-server.config]
+documentFormatting = false # use eslint instead, do we have to override this ourselves? I think if eslint LSP is detected and enabled, this should be done automatically for us as generally everyone lets eslint take over linting+prettying, which uses prettier by default if detected by it
+
+[[language]]
+name = "typescript"
+language-servers = ["typescript-language-server", "eslint"] # shouldn't need to override this
+auto-format = true
+
+[[language]]
+name = "tsx"
+language-servers = ["typescript-language-server", "eslint"] # shouldn't need to override this
+auto-format = true
+
+[[language]]
+name = "javascript"
+language-servers = ["typescript-language-server", "eslint"]
+auto-format = true
+
+[[language]]
+name = "jsx"
+language-servers = ["typescript-language-server", "eslint"]
+auto-format = true
+
+
+# [[language]]
+# name = "typescript"
+# language-servers = [{ except-features = ["format"], name = "typescript-language-server" }, "eslint"] # shouldn't need to override this
+# roots = ["package-lock.json", "tsconfig.json", ".prettierrc.json"] # shouldn't need to override this
+# formatter = { command = "prettier" }
+# auto-format = true
+
+# [[language]]
+# name = "tsx"
+# language-servers = [{ except-features = ["format"], name = "typescript-language-server" }, "eslint"] # shouldn't need to override this
+# roots = ["package-lock.json", "tsconfig.json", ".prettierrc.json"] # shouldn't need to override this!
+# formatter = { command = "prettier" } # works without any args, the modifications end up in the buffer, unsaved
+# auto-format = true
+
+# [[language]]
+# name = "javascript"
+# language-servers = [{except-features = ["format"], name = "typescript-language-server"}, "eslint"]
+# roots = ["package-lock.json", "tsconfig.json", ".prettierrc.json"] # shouldn't need to override this
+# formatter = { command = 'prettier' }
+# auto-format = true
+
+# [[language]]
+# name = "jsx"
+# language-servers = [{except-features = ["format"], name = "typescript-language-server"}, "eslint"]
+# roots = ["tailwind.config.js","tailwind.config.cjs", ".prettierrc.json"]
+# formatter = { command = 'prettier' }
+# auto-format = true

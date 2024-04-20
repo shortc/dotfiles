@@ -1,0 +1,8 @@
+.DS_Store
+
+/.config/alacritty/themes/
+/.config/helix/runtime/
+/.config/lazygit/state.yml
+/.config/zed/conversations/
+/.config/zed/embeddings/
+/.config/zed/.*
