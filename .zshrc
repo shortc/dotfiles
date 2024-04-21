@@ -1,20 +1,11 @@
 # oh my zsh
 export ZSH="$HOME/.oh-my-zsh"
 
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(git z fnm node npm brew fd fzf zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
 # aliases
-alias dotnetx64="/usr/local/share/dotnet/x64/dotnet"
 alias c="clear"
 alias omzr="omz reload"
 alias lg="lazygit"
@@ -43,7 +34,7 @@ function h() {
     fi
 }
 
-# fvim -> find and open a file in vim
+# fvim -> find and open a file in helix
 function fhx() {
     if [[ $# -eq 0 ]]; then
         fd -t f | fzf --header "Open File in Helix" --preview "bat --color=always {}" | xargs hx
@@ -87,8 +78,6 @@ source $(brew --prefix nvm)/nvm.sh
 # # add-zsh-hook chpwd load-nvmrc
 # # load-nvm
 
-# docker desktop
-source /Users/cshort/.docker/init-zsh.sh || true
 
 # pnpm
 export PNPM_HOME="/Users/cshort/Library/pnpm"
@@ -107,16 +96,3 @@ export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml,$HOME/.config/lazygit/th
 
 # starship.rs
 eval "$(starship init zsh)"
-
-# libpq
-export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
-
-export PATH="/Users/cshort/Code/bin:$PATH"
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-
-# For ruby packages like Solargraph
-export PATH="$HOME/.gem/ruby/3.0.0/bin:$PATH"
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
