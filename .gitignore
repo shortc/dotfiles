@@ -2,6 +2,8 @@
 
 /.config/alacritty/themes/
 /.config/helix/runtime/
+/.config/helix/runtime
+/.config/iTerm2/
 /.config/lazygit/state.yml
 /.config/zed/conversations/
 /.config/zed/embeddings/
